@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html, body {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+
+        .container {
+            flex: 1;
+            height: 100%;
+        }
+
+        .container, .wrapper, .image-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wrapper, select {
+            margin-bottom: 32px;
+        }
+
+        .image-wrapper {
+            height: 50%;
+            width: 50%;
+        }
+
+        #img-with-filter {
+            max-width: 100%;
+            height: 100%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Image filters</h1>
+
+        <div class="wrapper">
+            <label for="upload-input">
+                Uppload image
+            </label>
+            <input type="file" id="upload-input" accept="image/png, image/jpeg">
+        </div>
+
+        <select id="select-filter" value="grayscale">
+            <option value="grayscale">grayscale</option>
+            <option value="flipv">flipv</option>
+            <option value="blur">blur</option>
+        </select>
+
+        <div class="wrapper">
+            <label for="filter-blur">
+                Blur sigma
+            </label>
+            <input type="number" id="filter-blur" value="5.0" min="1.0" max="10.0" step="0.1" />
+        </div>
+        
+        <div class="wrapper image-wrapper">
+            <img id="img-with-filter" />
+        </div>
+    </div>
+</body>
+</html>
